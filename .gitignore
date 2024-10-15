@@ -1,0 +1,8 @@
+.venv
+
+generated-csv
+data
+
+# Private Files
+*.env
+*.pem
