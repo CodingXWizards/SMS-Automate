@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  send-sms:
+    image: rajasgh18/sms-automate
+    ports:
+      - "5037:5037"
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+    privileged: true
+    tty: true
+    command: ["python", "send_sms.py"]

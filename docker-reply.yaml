@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  reply-sms:
+    image: rajasgh18/sms-automate
+    ports:
+      - "5037:5037"
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ./generated-csv:/app/data
+    privileged: true
+    environment:
+      - PHONE_NUMBER=919752159633
+    tty: true
+    command: ["python", "reply_sms.py"]
